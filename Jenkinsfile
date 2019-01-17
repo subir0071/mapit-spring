@@ -12,6 +12,7 @@ pipeline {
       when {
         expression {
           openshift.withCluster() {
+            echo "Hello from ${openshift.cluster()}'s default project: ${openshift.project()}"
             return !openshift.selector("bc", "mapit").exists();
           }
         }

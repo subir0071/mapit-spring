@@ -24,6 +24,7 @@ public class MapEndpoint {
     @Path(("/airports"))
     @Produces("application/json")
     public List<MapPoint> airports() {
+        System.out.println("Hello");
         return data.getAirports();
     }
 }
